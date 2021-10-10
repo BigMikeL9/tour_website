@@ -51,9 +51,10 @@ header {
 
 .heading__container {
   position: absolute;
-  top: 35%;
+  top: 40%;
   left: 50%;
   transform: translate(-50%, -50%);
+  text-align: center;
 
   /* fixes shake during animation of child elements*/
   backface-visibility: hidden;
@@ -69,7 +70,7 @@ header {
   font-size: 6rem;
   font-weight: 400;
   letter-spacing: 3.5rem;
-  padding-bottom: 4rem;
+  padding: 0 0 3rem 3.5rem;
 
   animation: moveInLeft 1.5s ease-in-out;
 }
@@ -78,12 +79,13 @@ header {
   display: block;
   font-size: 2rem;
   font-weight: 700;
-  letter-spacing: 1.74rem;
+  letter-spacing: 1.72rem;
+  padding: 0 0 7rem 1.72rem;
 
   animation: moveInRight 1.5s ease-in-out;
 }
 
-/* heading__primary-main animation */
+/* keyframes animation */
 @keyframes moveInLeft {
   0% {
     opacity: 0;
@@ -100,7 +102,6 @@ header {
   }
 }
 
-/* heading__primary-sub animation */
 @keyframes moveInRight {
   0% {
     opacity: 0;
@@ -115,4 +116,74 @@ header {
   100% {
     transform: translateX(0);
   }
+}
+
+@keyframes moveInTop {
+  0% {
+    transform: translateY(4rem);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0);
+    opactity: 1;
+  }
+}
+
+.btn {
+  display: inline-block;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 1.5rem 4rem;
+  border-radius: 10rem;
+  letter-spacing: 1px;
+  position: relative;
+
+  transition: all 0.2s; /* have to be on the initial state */
+}
+
+.btn__white {
+  background-color: #fff;
+  color: #777;
+}
+
+.btn__animated {
+  animation: moveInTop 0.5s ease-out 0.75s;
+
+  /* 👇 will automatically apply the values specified in the 'moveIntop' keyframe, before the animation starts. */
+  animation-fill-mode: backwards;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.btn:active {
+  transform: translateY(-1px);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.btn::after {
+  content: "";
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+
+  transition: all 0.4s;
+}
+
+.btn__white::after {
+  background-color: #fff;
+  border-radius: 10rem;
+}
+
+/* '::after' pseudo-element animation as we hover over original btn */
+.btn:hover::after {
+  transform: scaleX(1.4) scaleY(1.6);
+  opacity: 0;
 }
