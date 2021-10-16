@@ -1,12 +1,4 @@
-/*
-COLORS:
-
-Light green: #7ed56f
-Medium green: #55c57a
-Dark green: #28b485
-
-*/
-
+@charset "UTF-8";
 *,
 *::after,
 *::before {
@@ -28,63 +20,50 @@ body {
   padding: 1.6rem;
 }
 
-header {
+.header {
   position: relative;
   height: 95vh;
-  background-image: linear-gradient(
-      to right bottom,
-      rgba(126, 213, 111, 0.801),
-      rgba(40, 180, 131, 0.801)
-    ),
-    url("../img/hero.jpg");
+  background-image: linear-gradient(to right bottom, rgba(85, 197, 122, 0.8), rgba(40, 180, 133, 0.8)), url("../img/hero.jpg");
   background-size: cover;
   background-position: top;
   clip-path: polygon(0 0, 100% 0, 100% 75%, 0 100%);
 }
-
-.logo__container {
+.header__logo-container {
   position: absolute;
   top: 4rem;
   left: 4rem;
 }
-
-.logo {
+.header__logo {
   height: 3.5rem;
 }
-
-.heading__container {
+.header__title-container {
   position: absolute;
   top: 40%;
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
+}
 
+.heading-primary {
+  color: #fff;
+  text-transform: uppercase;
   /* fixes shake during animation of child elements*/
   backface-visibility: hidden;
 }
-
-.heading__primary {
-  color: #fff;
-  text-transform: uppercase;
-}
-
-.heading__primary-main {
+.heading-primary--main {
   display: block;
   font-size: 6rem;
   font-weight: 400;
   letter-spacing: 3.5rem;
   padding: 0 0 3rem 3.5rem;
-
   animation: moveInLeft 1.5s ease-in-out;
 }
-
-.heading__primary-sub {
+.heading-primary--sub {
   display: block;
   font-size: 2rem;
   font-weight: 700;
   letter-spacing: 1.7rem;
   padding: 0 0 7rem 1.72rem;
-
   animation: moveInRight 1.5s ease-in-out;
 }
 
@@ -94,100 +73,85 @@ header {
     opacity: 0;
     transform: translateX(-10rem);
   }
-
   70% {
     opacity: 1;
     transform: translateX(1rem);
   }
-
   100% {
     transform: translateX(0);
   }
 }
-
 @keyframes moveInRight {
   0% {
     opacity: 0;
     transform: translateX(10rem);
   }
-
   70% {
     opacity: 1;
     transform: translateX(-1rem);
   }
-
   100% {
     transform: translateX(0);
   }
 }
-
 @keyframes moveInTop {
   0% {
     transform: translateY(4rem);
     opacity: 0;
   }
-
   100% {
     transform: translateY(0);
     opactity: 1;
   }
 }
-
-.btn:link,
-.btn:visited {
+.btn:link, .btn:visited {
   display: inline-block;
+  position: relative;
   text-transform: uppercase;
   text-decoration: none;
   padding: 1.5rem 4rem;
   border-radius: 10rem;
-  letter-spacing: 1px;
-  position: relative;
-
-  transition: all 0.2s; /* have to be on the initial state */
+  letter-spacing: 0.1px;
+  font-size: 1.6rem;
+  transition: all 0.2s;
+  /* have to be on the initial state */
 }
-
-.btn__white {
+.btn--white {
   background-color: #fff;
   color: #777;
 }
-
-.btn__animated {
-  animation: moveInTop 0.5s ease-out 0.75s;
-
-  /* 👇 will automatically apply the values specified in the 'moveIntop' keyframe, before the animation starts. */
-  animation-fill-mode: backwards;
-}
-
-.btn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
-}
-
-.btn:active {
-  transform: translateY(-1px);
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
-}
-
-.btn::after {
-  content: "";
-  display: inline-block;
-  height: 100%;
-  width: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: -1;
-
-  transition: all 0.4s;
-}
-
-.btn__white::after {
+.btn--white::after {
   background-color: #fff;
   border-radius: 10rem;
 }
-
-/* '::after' pseudo-element animation as we hover over original btn */
+.btn--animated {
+  animation: moveInTop 0.5s ease-out 0.75s;
+  /* 👇 will automatically apply the values specified in the 'moveIntop' keyframe, before the animation starts. */
+  animation-fill-mode: backwards;
+}
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+  /* '::after' pseudo-element animation as we hover over original btn */
+}
 .btn:hover::after {
   transform: scaleX(1.4) scaleY(1.6);
   opacity: 0;
 }
+.btn:active {
+  transform: translateY(-1px);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+}
+.btn::after {
+  content: "";
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  transition: all 0.4s;
+}
+
+/*# sourceMappingURL=style.css.map */
