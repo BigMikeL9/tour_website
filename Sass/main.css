@@ -1,0 +1,253 @@
+@charset "UTF-8";
+@-webkit-keyframes moveInLeft {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(-10rem);
+            transform: translateX(-10rem);
+  }
+  70% {
+    opacity: 1;
+    -webkit-transform: translateX(1rem);
+            transform: translateX(1rem);
+  }
+  100% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+@keyframes moveInLeft {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(-10rem);
+            transform: translateX(-10rem);
+  }
+  70% {
+    opacity: 1;
+    -webkit-transform: translateX(1rem);
+            transform: translateX(1rem);
+  }
+  100% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+
+@-webkit-keyframes moveInRight {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(10rem);
+            transform: translateX(10rem);
+  }
+  70% {
+    opacity: 1;
+    -webkit-transform: translateX(-1rem);
+            transform: translateX(-1rem);
+  }
+  100% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+
+@keyframes moveInRight {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(10rem);
+            transform: translateX(10rem);
+  }
+  70% {
+    opacity: 1;
+    -webkit-transform: translateX(-1rem);
+            transform: translateX(-1rem);
+  }
+  100% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+
+@-webkit-keyframes moveInTop {
+  0% {
+    -webkit-transform: translateY(4rem);
+            transform: translateY(4rem);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    opactity: 1;
+  }
+}
+
+@keyframes moveInTop {
+  0% {
+    -webkit-transform: translateY(4rem);
+            transform: translateY(4rem);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    opactity: 1;
+  }
+}
+
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  font-family: "Lato", sans-serif;
+  font-size: 1.6rem;
+  font-weight: 400;
+  color: #777;
+  padding: 1.6rem;
+}
+
+.heading-primary {
+  color: #fff;
+  text-transform: uppercase;
+  /* fixes shake during animation of child elements*/
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+}
+
+.heading-primary--main {
+  display: block;
+  font-size: 6rem;
+  font-weight: 400;
+  letter-spacing: 3.5rem;
+  padding: 0 0 3rem 3.5rem;
+  -webkit-animation: moveInLeft 1.5s ease-in-out;
+          animation: moveInLeft 1.5s ease-in-out;
+}
+
+.heading-primary--sub {
+  display: block;
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 1.7rem;
+  padding: 0 0 7rem 1.72rem;
+  -webkit-animation: moveInRight 1.5s ease-in-out;
+          animation: moveInRight 1.5s ease-in-out;
+}
+
+.btn:link, .btn:visited {
+  display: inline-block;
+  position: relative;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 1.5rem 4rem;
+  border-radius: 10rem;
+  letter-spacing: 0.1px;
+  font-size: 1.6rem;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+  /* have to be on the initial state */
+}
+
+.btn--white {
+  background-color: #fff;
+  color: #777;
+}
+
+.btn--white::after {
+  background-color: #fff;
+  border-radius: 10rem;
+}
+
+.btn--animated {
+  -webkit-animation: moveInTop 0.5s ease-out 0.75s;
+          animation: moveInTop 0.5s ease-out 0.75s;
+  /* 👇 will automatically apply the values specified in the 'moveIntop' keyframe, before the animation starts. */
+  -webkit-animation-fill-mode: backwards;
+          animation-fill-mode: backwards;
+}
+
+.btn:hover {
+  -webkit-transform: translateY(-3px);
+          transform: translateY(-3px);
+  -webkit-box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+          box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+  /* '::after' pseudo-element animation as we hover over original btn */
+}
+
+.btn:hover::after {
+  -webkit-transform: scaleX(1.4) scaleY(1.6);
+          transform: scaleX(1.4) scaleY(1.6);
+  opacity: 0;
+}
+
+.btn:active {
+  -webkit-transform: translateY(-1px);
+          transform: translateY(-1px);
+  -webkit-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+          box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+}
+
+.btn::after {
+  content: "";
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
+}
+
+.header {
+  position: relative;
+  height: 95vh;
+  background-image: -webkit-gradient(linear, left top, right bottom, from(rgba(85, 197, 122, 0.8)), to(rgba(40, 180, 133, 0.8))), url("../img/hero.jpg");
+  background-image: linear-gradient(to right bottom, rgba(85, 197, 122, 0.8), rgba(40, 180, 133, 0.8)), url("../img/hero.jpg");
+  background-size: cover;
+  background-position: top;
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 75%, 0 100%);
+          clip-path: polygon(0 0, 100% 0, 100% 75%, 0 100%);
+}
+
+.header__logo-container {
+  position: absolute;
+  top: 4rem;
+  left: 4rem;
+}
+
+.header__logo {
+  height: 3.5rem;
+}
+
+.header__title-container {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.section__about {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 100vh;
+  background-color: #eee;
+  padding: 10rem 6rem;
+}
+/*# sourceMappingURL=main.css.map */
