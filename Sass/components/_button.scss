@@ -14,12 +14,12 @@
   }
 
   &--white {
-    background-color: $color-white;
-    color: $color-grey-dark;
+    background-color: var(--color-white);
+    color: var(--color-grey-dark);
 
     // remember same as '.btn--white::after {...}'
     &::after {
-      background-color: $color-white;
+      background-color: var(--color-white);
       border-radius: 10rem;
     }
   }
@@ -33,7 +33,7 @@
 
   &:hover {
     transform: translateY(-3px);
-    box-shadow: 0 1rem 2rem rgba($color-black, 0.2);
+    box-shadow: 0 1rem 2rem var(--color-black-transparent);
 
     /* '::after' pseudo-element animation as we hover over original btn */
     // same as '.btn:hover::after {...}'
@@ -45,7 +45,7 @@
 
   &:active {
     transform: translateY(-1px);
-    box-shadow: 0 0.5rem 1rem rgba($color-black, 0.2);
+    box-shadow: 0 0.5rem 1rem var(--color-black-transparent);
   }
 
   &::after {

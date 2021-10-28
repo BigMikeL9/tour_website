@@ -1,5 +1,5 @@
 .heading-primary {
-  color: $color-white;
+  color: var(--color-white);
   text-transform: uppercase;
 
   /* fixes shake during animation of child elements*/
@@ -24,5 +24,27 @@
     padding: 0 0 7rem 1.72rem;
 
     animation: moveInRight 1.5s ease-in-out;
+  }
+}
+
+.heading-secondary {
+  font-size: 3.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+  font-weight: 700;
+
+  background-image: linear-gradient(
+    to bottom right,
+    var(--color-primary),
+    var(--color-primary-dark)
+  );
+  -webkit-background-clip: text;
+  color: transparent;
+
+  transition: all 0.5s;
+
+  &:hover {
+    text-shadow: 0.5rem 1rem 2rem var(--color-black-transparent);
+    transform: skew(15deg, 2deg) scale(1.1);
   }
 }

@@ -1,4 +1,18 @@
 @charset "UTF-8";
+:root {
+  --color-primary: #7ed56f;
+  --color-primary-light: #55c57a;
+  --color-primary-dark: #28b485;
+  --color-primary-light-transparent: rgba(85, 197, 122, 0.8);
+  --color-primary-dark-transparent: rgba(39, 180, 133, 0.8);
+  --color-grey-light: #eee;
+  --color-grey-light-1: #f7f7f7;
+  --color-grey-dark: #777;
+  --color-white: #fff;
+  --color-black: #000;
+  --color-black-transparent: rgba(0, 0, 0, 0.2);
+}
+
 @keyframes moveInLeft {
   0% {
     opacity: 0;
@@ -52,12 +66,12 @@ body {
   font-family: "Lato", sans-serif;
   font-size: 1.6rem;
   font-weight: 400;
-  color: #777;
+  color: var(--color-grey-dark);
   padding: 1.6rem;
 }
 
 .heading-primary {
-  color: #fff;
+  color: var(--color-white);
   text-transform: uppercase;
   /* fixes shake during animation of child elements*/
   backface-visibility: hidden;
@@ -79,6 +93,21 @@ body {
   animation: moveInRight 1.5s ease-in-out;
 }
 
+.heading-secondary {
+  font-size: 3.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+  font-weight: 700;
+  background-image: linear-gradient(to bottom right, var(--color-primary), var(--color-primary-dark));
+  -webkit-background-clip: text;
+  color: transparent;
+  transition: all 0.5s;
+}
+.heading-secondary:hover {
+  text-shadow: 0.5rem 1rem 2rem var(--color-black-transparent);
+  transform: skew(15deg, 2deg) scale(1.1);
+}
+
 .btn:link, .btn:visited {
   display: inline-block;
   position: relative;
@@ -92,11 +121,11 @@ body {
   /* have to be on the initial state */
 }
 .btn--white {
-  background-color: #fff;
-  color: #777;
+  background-color: var(--color-white);
+  color: var(--color-grey-dark);
 }
 .btn--white::after {
-  background-color: #fff;
+  background-color: var(--color-white);
   border-radius: 10rem;
 }
 .btn--animated {
@@ -106,7 +135,7 @@ body {
 }
 .btn:hover {
   transform: translateY(-3px);
-  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+  box-shadow: 0 1rem 2rem var(--color-black-transparent);
   /* '::after' pseudo-element animation as we hover over original btn */
 }
 .btn:hover::after {
@@ -115,7 +144,7 @@ body {
 }
 .btn:active {
   transform: translateY(-1px);
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0.5rem 1rem var(--color-black-transparent);
 }
 .btn::after {
   content: "";
@@ -132,10 +161,10 @@ body {
 .header {
   position: relative;
   height: 95vh;
-  background-image: linear-gradient(to right bottom, rgba(85, 197, 122, 0.8), rgba(40, 180, 133, 0.8)), url("../img/hero.jpg");
+  background-image: linear-gradient(to right bottom, var(--color-primary-light-transparent), var(--color-primary-dark-transparent)), url("../img/hero.jpg");
   background-size: cover;
   background-position: top;
-  clip-path: polygon(0 0, 100% 0, 100% 75%, 0 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
 }
 .header__logo-container {
   position: absolute;
@@ -153,12 +182,64 @@ body {
   text-align: center;
 }
 
-.section__about {
+.about {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--color-grey-light-1);
+  padding: 15rem 8rem 0;
+  margin-top: -20vh;
+}
+.about__content-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 4rem;
+}
+.about__content {
+  width: 45%;
+  padding-top: 5rem;
+}
+.about__content > * {
+  margin-bottom: 3rem;
+}
+.about__title {
+  font-size: 2rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding-bottom: 1rem;
+}
+.about__text {
+  font-size: 1.5rem;
+  line-height: 2;
+}
+.about__images-container {
+  position: relative;
   display: flex;
   justify-content: center;
-  height: 100vh;
-  background-color: #eee;
-  padding: 10rem 6rem;
+  align-items: center;
+  width: 50%;
+}
+.about__images-container > * {
+  position: absolute;
+  box-shadow: 0.5rem 1rem 1.5rem rgba(0, 0, 0, 0.5);
+  transition: all 0.3s;
+}
+.about__images-container > *:hover {
+  box-shadow: 0.5rem 2rem 1.5rem rgba(0, 0, 0, 0.5);
+  transform: scale(1.1);
+  z-index: 1;
+}
+.about__image-1 {
+  top: 2rem;
+  left: 2rem;
+}
+.about__image-2 {
+  top: 5rem;
+  right: 3rem;
+}
+.about__image-3 {
+  bottom: 6rem;
 }
 
 /*# sourceMappingURL=style.css.map */
