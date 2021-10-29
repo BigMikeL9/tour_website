@@ -18,5 +18,8 @@
   "homepage": "https://github.com/BigMikeL9/tour_website#readme",
   "devDependencies": {
     "sass": "^1.43.2"
+  },
+  "dependencies": {
+    "live-server": "^1.2.1"
   }
 }

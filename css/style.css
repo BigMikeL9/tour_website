@@ -108,6 +108,10 @@ body {
   transform: skew(15deg, 2deg) scale(1.1);
 }
 
+.u-margin-bottom-8rem {
+  margin-bottom: 8rem;
+}
+
 .btn:link, .btn:visited {
   display: inline-block;
   position: relative;
@@ -194,7 +198,6 @@ body {
 .about__content-container {
   display: flex;
   justify-content: space-between;
-  margin-top: 4rem;
 }
 .about__content {
   width: 45%;
