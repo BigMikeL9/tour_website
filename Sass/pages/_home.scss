@@ -6,7 +6,7 @@
 
   // height: 100vh;
   background-color: var(--color-grey-light-1);
-  padding: 15rem 8rem 0;
+  padding: 25rem 8rem 12rem;
   margin-top: -20vh; // moves the about-section up 👆
 
   &__content-container {
@@ -16,47 +16,57 @@
   &__content {
     width: 45%;
     margin-right: 3rem;
-    padding-top: 5rem;
+    padding-top: 4rem;
 
     & > :not(:last-child) {
       margin-bottom: 3rem;
     }
   }
+}
 
-  &__images-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex: 1;
+.composition {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
 
-    position: relative;
+  position: relative;
 
-    & > * {
-      position: absolute;
-      box-shadow: 0.5rem 1rem 1.5rem rgba(0, 0, 0, 0.5);
-      // height: 3rem;
-      // width: 3rem;
-      transition: all 0.3s;
-    }
-
-    & > *:hover {
-      box-shadow: 0.5rem 2rem 1.5rem rgba(0, 0, 0, 0.5);
-      transform: scale(1.1);
-      z-index: 1;
-    }
+  & > * {
+    position: absolute;
+    width: 50%;
+    // border-radius: 0.2rem;
+    box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.4);
+    transition: all 0.2s;
   }
 
-  &__image-1 {
-    top: 2rem;
+  & > *:hover {
+    transform: scale(1.05) translateY(-0.5rem);
+    box-shadow: 0 2.5rem 4rem rgba(0, 0, 0, 0.5);
+    z-index: 1;
+
+    outline: 1.5rem solid var(--color-primary-dark);
+    outline-offset: 2rem;
+  }
+
+  // scales down remaining images when hovering over one 👇👇
+  // When we hover the composition element --> then select the image that is not hovered over 😵
+  &:hover img:not(:hover) {
+    transform: scale(0.9);
+  }
+
+  &__image--p1 {
+    top: 1rem;
     left: 2rem;
   }
 
-  &__image-2 {
-    top: 5rem;
-    right: 3rem;
+  &__image--p2 {
+    top: 4rem;
+    right: 4rem;
   }
 
-  &__image-3 {
-    bottom: 6rem;
+  &__image--p3 {
+    left: 20%;
+    bottom: 0;
   }
 }

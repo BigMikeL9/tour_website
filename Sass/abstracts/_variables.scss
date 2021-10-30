@@ -1,4 +1,5 @@
 :root {
+  // COLORS
   --color-primary: #7ed56f;
   --color-primary-light: #55c57a;
   --color-primary-dark: #28b485;
@@ -13,4 +14,7 @@
   --color-white: #fff;
   --color-black: #000;
   --color-black-transparent: rgba(0, 0, 0, 0.2);
+
+  // FONT-SIZE
+  --default-font-size: 1.6rem;
 }
