@@ -3,13 +3,16 @@
   --color-primary: #7ed56f;
   --color-primary-light: #55c57a;
   --color-primary-dark: #28b485;
-  --color-primary-light-transparent: rgba(85, 197, 122, 0.8);
-  --color-primary-dark-transparent: rgba(39, 180, 133, 0.8);
   --color-grey-light: #eee;
   --color-grey-light-1: #f7f7f7;
   --color-grey-dark: #777;
   --color-white: #fff;
   --color-black: #000;
+  --color-white-transparent: rgba(255, 255, 255, 0.7);
+  --color-primary-transparent: rgba(126, 213, 111, 0.8);
+  --color-primary-light-transparent: rgba(85, 197, 122, 0.8);
+  --color-primary-dark-transparent: rgba(39, 180, 133, 0.8);
+  --color-grey-light-transparent: rgba(238, 238, 238, 0.7);
   --color-black-transparent: rgba(0, 0, 0, 0.2);
   --default-font-size: 1.6rem;
 }
@@ -203,51 +206,6 @@ body {
   box-shadow: 0 0.5rem 1rem var(--color-black-transparent);
 }
 
-.header {
-  position: relative;
-  height: 95vh;
-  background-image: linear-gradient(to right bottom, var(--color-primary-light-transparent), var(--color-primary-dark-transparent)), url("../img/hero.jpg");
-  background-size: cover;
-  background-position: top;
-  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
-}
-.header__logo-container {
-  position: absolute;
-  top: 4rem;
-  left: 4rem;
-}
-.header__logo {
-  height: 3.5rem;
-}
-.header__title-container {
-  position: absolute;
-  top: 40%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-}
-
-.about {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background-color: var(--color-grey-light-1);
-  padding: 25rem 8rem 12rem;
-  margin-top: -20vh;
-}
-.about__content-container {
-  display: flex;
-}
-.about__content {
-  width: 45%;
-  margin-right: 3rem;
-  padding-top: 4rem;
-}
-.about__content > :not(:last-child) {
-  margin-bottom: 3rem;
-}
-
 .composition {
   display: flex;
   justify-content: center;
@@ -282,6 +240,100 @@ body {
 .composition__image--p3 {
   left: 20%;
   bottom: 0;
+}
+
+.feature {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  padding: 20rem 18rem;
+  margin-top: -15vh;
+}
+.feature::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 1;
+  background-image: linear-gradient(to bottom right, var(--color-primary-light-transparent), var(--color-primary-dark-transparent)), url("/img/nat-4.jpg");
+  background-position: center;
+  background-size: cover;
+  transform: skewY(-7deg);
+}
+.feature__item {
+  font-size: 1.5rem;
+  width: 25rem;
+  height: 28rem;
+  padding: 4rem 2.5rem;
+  text-align: center;
+  border-radius: 3px;
+  background-color: var(--color-white-transparent);
+  box-shadow: 0 1.5rem 2rem var(--color-black-transparent);
+  position: relative;
+  z-index: 2;
+  transition: transform 0.3s;
+}
+.feature__item:not(:last-child) {
+  margin-right: 6rem;
+}
+.feature__item:hover {
+  transform: translateY(-1.5rem) scale(1.03);
+}
+.feature__item--icon {
+  font-size: 6rem;
+  background-image: linear-gradient(to right, var(--color-primary-light), var(--color-primary-dark));
+  -webkit-background-clip: text;
+  color: transparent;
+}
+.feature__item--title {
+  margin: 2rem 0;
+}
+.header {
+  position: relative;
+  height: 95vh;
+  background-image: linear-gradient(to right bottom, var(--color-primary-light-transparent), var(--color-primary-dark-transparent)), url("../img/hero.jpg");
+  background-size: cover;
+  background-position: top;
+  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+}
+.header__logo-container {
+  position: absolute;
+  top: 4rem;
+  left: 4rem;
+}
+.header__logo {
+  height: 3.5rem;
+}
+.header__title-container {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.about {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--color-grey-light-1);
+  padding: 20rem 8rem 25rem;
+  margin-top: -20vh;
+}
+.about__content-container {
+  display: flex;
+}
+.about__content {
+  width: 45%;
+  padding-top: 4rem;
+  margin-left: 3rem;
+}
+.about__content > :not(:last-child) {
+  margin-bottom: 3rem;
 }
 
 /*# sourceMappingURL=style.css.map */
