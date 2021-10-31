@@ -11,7 +11,9 @@
   --color-white-transparent: rgba(255, 255, 255, 0.7);
   --color-primary-transparent: rgba(126, 213, 111, 0.8);
   --color-primary-light-transparent: rgba(85, 197, 122, 0.8);
+  --color-primary-light-transparent-2: rgba(85, 197, 122, 0.5);
   --color-primary-dark-transparent: rgba(39, 180, 133, 0.8);
+  --color-primary-dark-transparent-2: rgba(39, 180, 133, 0.5);
   --color-grey-light-transparent: rgba(238, 238, 238, 0.7);
   --color-black-transparent: rgba(0, 0, 0, 0.2);
   --default-font-size: 1.6rem;
@@ -249,6 +251,7 @@ body {
   position: relative;
   padding: 20rem 18rem;
   margin-top: -15vh;
+  background-color: var(--color-grey-light-1);
 }
 .feature::after {
   content: "";
@@ -291,6 +294,76 @@ body {
 .feature__item--title {
   margin: 2rem 0;
 }
+.tours {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: var(--color-grey-light-1);
+}
+.tours__items {
+  display: flex;
+}
+.tours__item {
+  text-align: center;
+  border-radius: 3px;
+  box-shadow: 0 1rem 2rem var(--color-black-transparent);
+  position: relative;
+  width: 28rem;
+  height: 45rem;
+}
+.tours__item:not(:last-child) {
+  margin-right: 4rem;
+}
+.tours__item--image {
+  background-size: cover;
+  background-position: top;
+  clip-path: polygon(0 0, 100% 0, 100% 80%, 0% 100%);
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  height: 45%;
+  width: 100%;
+}
+.tours__item--image-1 {
+  background-image: linear-gradient(to bottom right, var(--color-primary-transparent), var(--color-primary-dark-transparent-2)), url("/img/nat-4.jpg");
+}
+.tours__item--image-2 {
+  background-image: linear-gradient(to bottom right, var(--color-primary-transparent), var(--color-primary-dark-transparent-2)), url("/img/nat-5.jpg");
+}
+.tours__item--image-3 {
+  background-image: linear-gradient(to bottom right, var(--color-primary-transparent), var(--color-primary-dark-transparent-2)), url("/img/nat-6.jpg");
+}
+.tours__item--title {
+  position: absolute;
+  top: 27%;
+  right: 0;
+  margin-right: 2rem;
+  font-size: 2rem;
+  font-weight: 300;
+  text-align: right;
+  text-transform: uppercase;
+  color: var(--color-white);
+}
+.tours__item--title > * {
+  padding: 0.5rem 1rem;
+}
+.tours__item--title :first-child {
+  position: relative;
+  bottom: 0.5rem;
+}
+.tours__item--title-1 > * {
+  background-image: linear-gradient(to bottom right, var(--color-primary-transparent), var(--color-primary-dark-transparent));
+}
+.tours__item--benefits {
+  margin-top: 2rem;
+  padding: 0 4rem;
+}
+.tours__item--benefits > * {
+  padding: 1.5rem 0;
+  border-bottom: 2px solid var(--color-grey-light);
+}
+
 .header {
   position: relative;
   height: 95vh;

@@ -1,0 +1,104 @@
+.tours {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  height: 100vh;
+  //   padding: 40rem 0;
+  background-color: var(--color-grey-light-1);
+
+  &__items {
+    display: flex;
+  }
+
+  &__item {
+    text-align: center;
+    border-radius: 3px;
+    box-shadow: 0 1rem 2rem var(--color-black-transparent);
+    position: relative;
+
+    width: 28rem;
+    height: 45rem;
+
+    &:not(:last-child) {
+      margin-right: 4rem;
+    }
+
+    &--image {
+      background-size: cover;
+      background-position: top;
+      clip-path: polygon(0 0, 100% 0, 100% 80%, 0% 100%);
+      border-top-left-radius: 3px;
+      border-top-right-radius: 3px;
+      height: 45%;
+      width: 100%;
+
+      &-1 {
+        background-image: linear-gradient(
+            to bottom right,
+            var(--color-primary-transparent),
+            var(--color-primary-dark-transparent-2)
+          ),
+          url("/img/nat-4.jpg");
+      }
+
+      &-2 {
+        background-image: linear-gradient(
+            to bottom right,
+            var(--color-primary-transparent),
+            var(--color-primary-dark-transparent-2)
+          ),
+          url("/img/nat-5.jpg");
+      }
+
+      &-3 {
+        background-image: linear-gradient(
+            to bottom right,
+            var(--color-primary-transparent),
+            var(--color-primary-dark-transparent-2)
+          ),
+          url("/img/nat-6.jpg");
+      }
+    }
+
+    &--title {
+      position: absolute;
+      top: 27%;
+      right: 0;
+      margin-right: 2rem;
+      font-size: 2rem;
+      font-weight: 300;
+      text-align: right;
+      text-transform: uppercase;
+      color: var(--color-white);
+
+      & > * {
+        padding: 0.5rem 1rem;
+      }
+
+      & :first-child {
+        position: relative;
+        bottom: 0.5rem;
+      }
+
+      &-1 > * {
+        background-image: linear-gradient(
+          to bottom right,
+          var(--color-primary-transparent),
+          var(--color-primary-dark-transparent)
+        );
+      }
+    }
+
+    &--benefits {
+      margin-top: 2rem;
+      padding: 0 4rem;
+
+      & > * {
+        padding: 1.5rem 0;
+        border-bottom: 2px solid var(--color-grey-light);
+      }
+    }
+  }
+}
