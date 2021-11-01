@@ -3,6 +3,10 @@
   --color-primary: #7ed56f;
   --color-primary-light: #55c57a;
   --color-primary-dark: #28b485;
+  --color-secondary-light: #ffb900;
+  --color-secondary-dark: #ff7730;
+  --color-tertiary-light: #2998ff;
+  --color-tertiary-dark: #5643fa;
   --color-grey-light: #eee;
   --color-grey-light-1: #f7f7f7;
   --color-grey-dark: #777;
@@ -244,28 +248,6 @@ body {
   bottom: 0;
 }
 
-.feature {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  padding: 20rem 18rem;
-  margin-top: -15vh;
-  background-color: var(--color-grey-light-1);
-}
-.feature::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  z-index: 1;
-  background-image: linear-gradient(to bottom right, var(--color-primary-light-transparent), var(--color-primary-dark-transparent)), url("/img/nat-4.jpg");
-  background-position: center;
-  background-size: cover;
-  transform: skewY(-7deg);
-}
 .feature__item {
   font-size: 1.5rem;
   width: 25rem;
@@ -294,29 +276,25 @@ body {
 .feature__item--title {
   margin: 2rem 0;
 }
-.tours {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  background-color: var(--color-grey-light-1);
-}
-.tours__items {
-  display: flex;
-}
-.tours__item {
+.card {
   text-align: center;
   border-radius: 3px;
   box-shadow: 0 1rem 2rem var(--color-black-transparent);
   position: relative;
   width: 28rem;
   height: 45rem;
+  transition: all 0.8s;
 }
-.tours__item:not(:last-child) {
+.card__container {
+  display: flex;
+}
+.card:not(:last-child) {
   margin-right: 4rem;
 }
-.tours__item--image {
+.card:hover {
+  transform: rotateY(180deg);
+}
+.card--image {
   background-size: cover;
   background-position: top;
   clip-path: polygon(0 0, 100% 0, 100% 80%, 0% 100%);
@@ -325,16 +303,16 @@ body {
   height: 45%;
   width: 100%;
 }
-.tours__item--image-1 {
+.card--image-1 {
   background-image: linear-gradient(to bottom right, var(--color-primary-transparent), var(--color-primary-dark-transparent-2)), url("/img/nat-4.jpg");
 }
-.tours__item--image-2 {
+.card--image-2 {
   background-image: linear-gradient(to bottom right, var(--color-primary-transparent), var(--color-primary-dark-transparent-2)), url("/img/nat-5.jpg");
 }
-.tours__item--image-3 {
+.card--image-3 {
   background-image: linear-gradient(to bottom right, var(--color-primary-transparent), var(--color-primary-dark-transparent-2)), url("/img/nat-6.jpg");
 }
-.tours__item--title {
+.card--title {
   position: absolute;
   top: 27%;
   right: 0;
@@ -345,21 +323,21 @@ body {
   text-transform: uppercase;
   color: var(--color-white);
 }
-.tours__item--title > * {
+.card--title > * {
   padding: 0.5rem 1rem;
 }
-.tours__item--title :first-child {
+.card--title :first-child {
   position: relative;
   bottom: 0.5rem;
 }
-.tours__item--title-1 > * {
+.card--title-1 > * {
   background-image: linear-gradient(to bottom right, var(--color-primary-transparent), var(--color-primary-dark-transparent));
 }
-.tours__item--benefits {
+.card--benefits {
   margin-top: 2rem;
   padding: 0 4rem;
 }
-.tours__item--benefits > * {
+.card--benefits > * {
   padding: 1.5rem 0;
   border-bottom: 2px solid var(--color-grey-light);
 }
@@ -407,6 +385,38 @@ body {
 }
 .about__content > :not(:last-child) {
   margin-bottom: 3rem;
+}
+
+.feature {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  padding: 20rem 18rem;
+  margin-top: -15vh;
+  background-color: var(--color-grey-light-1);
+}
+.feature::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 1;
+  background-image: linear-gradient(to bottom right, var(--color-primary-light-transparent), var(--color-primary-dark-transparent)), url("/img/nat-4.jpg");
+  background-position: center;
+  background-size: cover;
+  transform: skewY(-7deg);
+}
+
+.tours {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: var(--color-grey-light-1);
 }
 
 /*# sourceMappingURL=style.css.map */

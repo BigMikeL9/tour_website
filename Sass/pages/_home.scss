@@ -1,3 +1,5 @@
+/////////////////////////////////////////////////////
+// About Section
 .about {
   display: flex;
   flex-direction: column;
@@ -21,4 +23,56 @@
       margin-bottom: 3rem;
     }
   }
+}
+
+
+/////////////////////////////////////////////////////
+// Feature Section
+.feature {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: relative;
+
+  padding: 20rem 18rem;
+  margin-top: -15vh; // moves the entire section up 👆
+  background-color: var(--color-grey-light-1);
+
+  // background image
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+
+    background-image: linear-gradient(
+        to bottom right,
+        var(--color-primary-light-transparent),
+        var(--color-primary-dark-transparent)
+      ),
+      url("/img/nat-4.jpg");
+    background-position: center;
+    background-size: cover;
+
+    // skew entire section
+    transform: skewY(-7deg);
+  }
+}
+
+
+/////////////////////////////////////////////////////
+// Tour Section
+.tours {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  height: 100vh;
+  //   padding: 40rem 0;
+  background-color: var(--color-grey-light-1);
 }
