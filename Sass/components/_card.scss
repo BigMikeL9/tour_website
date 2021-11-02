@@ -1,99 +1,143 @@
 .card {
-  &__container {
-    display: flex;
-  }
-
   text-align: center;
-  border-radius: 3px;
-  box-shadow: 0 1rem 2rem var(--color-black-transparent);
+
   position: relative;
 
   width: 28rem;
   height: 45rem;
+  perspective: 100rem; // to change the perspective of an element, we have to define the 'perspective' property in its PARENT element
 
-  transition: all 0.8s;
+  &__container {
+    display: flex;
+  }
 
   &:not(:last-child) {
     margin-right: 4rem;
   }
 
-  &:hover {
+  &:hover &__side-front {
     transform: rotateY(180deg);
   }
 
-  &--image {
-    background-size: cover;
-    background-position: top;
-    clip-path: polygon(0 0, 100% 0, 100% 80%, 0% 100%);
-    border-top-left-radius: 3px;
-    border-top-right-radius: 3px;
-    height: 45%;
-    width: 100%;
-
-    &-1 {
-      background-image: linear-gradient(
-          to bottom right,
-          var(--color-primary-transparent),
-          var(--color-primary-dark-transparent-2)
-        ),
-        url("/img/nat-4.jpg");
-    }
-
-    &-2 {
-      background-image: linear-gradient(
-          to bottom right,
-          var(--color-primary-transparent),
-          var(--color-primary-dark-transparent-2)
-        ),
-        url("/img/nat-5.jpg");
-    }
-
-    &-3 {
-      background-image: linear-gradient(
-          to bottom right,
-          var(--color-primary-transparent),
-          var(--color-primary-dark-transparent-2)
-        ),
-        url("/img/nat-6.jpg");
-    }
+  &:hover &__side-back {
+    transform: rotateY(0);
   }
 
-  &--title {
+  &__side {
+    // absolute positioning makes both card (front/back) on top of each other.
     position: absolute;
-    top: 27%;
-    right: 0;
-    margin-right: 2rem;
-    font-size: 2rem;
-    font-weight: 300;
-    text-align: right;
-    text-transform: uppercase;
-    color: var(--color-white);
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    border-radius: 3px;
+    box-shadow: 0 1.5rem 4rem var(--color-black-transparent);
 
-    & > * {
-      padding: 0.5rem 1rem;
+    transition: all 0.8s ease;
+    backface-visibility: hidden; // hides the back side of both cards when they are rotated 180deg
+
+    ////////////////////////////////////////////////
+    // Card -- FRONT SIDE
+    &-front {
+      &-image {
+        background-size: cover;
+        background-position: top;
+        clip-path: polygon(0 0, 100% 0, 100% 80%, 0% 100%);
+        border-top-left-radius: 3px;
+        border-top-right-radius: 3px;
+        height: 45%;
+        width: 100%;
+
+        &--1 {
+          background-image: linear-gradient(
+              to bottom right,
+              var(--color-primary-transparent),
+              var(--color-primary-dark-transparent-2)
+            ),
+            url("/img/nat-4.jpg");
+        }
+
+        &--2 {
+          background-image: linear-gradient(
+              to bottom right,
+              var(--color-primary-transparent),
+              var(--color-primary-dark-transparent-2)
+            ),
+            url("/img/nat-5.jpg");
+        }
+
+        &--3 {
+          background-image: linear-gradient(
+              to bottom right,
+              var(--color-primary-transparent),
+              var(--color-primary-dark-transparent-2)
+            ),
+            url("/img/nat-6.jpg");
+        }
+      }
+
+      &-title {
+        position: absolute;
+        top: 27%;
+        right: 0;
+        margin-right: 2rem;
+        font-size: 2rem;
+        font-weight: 300;
+        text-align: right;
+        text-transform: uppercase;
+        color: var(--color-white);
+
+        & > * {
+          padding: 0.5rem 1rem;
+        }
+
+        & :first-child {
+          position: relative;
+          bottom: 0.5rem;
+        }
+
+        &--1 > * {
+          background-image: linear-gradient(
+            to bottom right,
+            var(--color-primary-transparent),
+            var(--color-primary-dark-transparent)
+          );
+        }
+      }
+
+      &-benefits {
+        margin-top: 2rem;
+        padding: 0 4rem;
+
+        & > * {
+          padding: 1.5rem 0;
+        }
+
+        & :not(:last-child) {
+          border-bottom: 2px solid var(--color-grey-light);
+        }
+      }
     }
 
-    & :first-child {
-      position: relative;
-      bottom: 0.5rem;
-    }
+    ////////////////////////////////////////////////
+    // Card -- BACK SIDE
+    &-back {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
 
-    &-1 > * {
-      background-image: linear-gradient(
-        to bottom right,
-        var(--color-primary-transparent),
-        var(--color-primary-dark-transparent)
-      );
-    }
-  }
+      transform: rotateY(
+        180deg
+      ); // back-side initially flipped and since 'backface-visibility: hidden;' is set to hidden, its backside is hidden for the user.
 
-  &--benefits {
-    margin-top: 2rem;
-    padding: 0 4rem;
-
-    & > * {
-      padding: 1.5rem 0;
-      border-bottom: 2px solid var(--color-grey-light);
+      &--1 {
+        background-image: linear-gradient(
+          to right bottom,
+          var(--color-secondary-light),
+          var(--color-secondary-dark)
+        );
+      }
     }
   }
 }
