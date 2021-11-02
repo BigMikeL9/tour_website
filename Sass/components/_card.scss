@@ -3,12 +3,13 @@
 
   position: relative;
 
-  width: 28rem;
+  width: 30rem;
   height: 45rem;
   perspective: 100rem; // to change the perspective of an element, we have to define the 'perspective' property in its PARENT element
 
   &__container {
     display: flex;
+    margin-bottom: 7rem;
   }
 
   &:not(:last-child) {
@@ -51,41 +52,44 @@
         &--1 {
           background-image: linear-gradient(
               to bottom right,
-              var(--color-primary-transparent),
-              var(--color-primary-dark-transparent-2)
+              var(--color-secondary-light-transparent-2),
+              var(--color-secondary-dark-transparent-2)
             ),
-            url("/img/nat-4.jpg");
+            url("/img/nat-5.jpg");
         }
 
         &--2 {
           background-image: linear-gradient(
               to bottom right,
-              var(--color-primary-transparent),
+              var(--color-primary-light-transparent-2),
               var(--color-primary-dark-transparent-2)
             ),
-            url("/img/nat-5.jpg");
+            url("/img/nat-6.jpg");
         }
 
         &--3 {
           background-image: linear-gradient(
               to bottom right,
-              var(--color-primary-transparent),
-              var(--color-primary-dark-transparent-2)
+              var(--color-tertiary-light-transparent-2),
+              var(--color-tertiary-dark-transparent-2)
             ),
-            url("/img/nat-6.jpg");
+            url("/img/nat-7.jpg");
         }
       }
 
       &-title {
-        position: absolute;
-        top: 27%;
-        right: 0;
-        margin-right: 2rem;
-        font-size: 2rem;
+        font-size: 2.5rem;
         font-weight: 300;
         text-align: right;
         text-transform: uppercase;
         color: var(--color-white);
+
+        &-container {
+          position: absolute;
+          top: 26%;
+          right: 0;
+          margin-right: 2rem;
+        }
 
         & > * {
           padding: 0.5rem 1rem;
@@ -96,12 +100,34 @@
           bottom: 0.5rem;
         }
 
-        &--1 > * {
-          background-image: linear-gradient(
-            to bottom right,
-            var(--color-primary-transparent),
-            var(--color-primary-dark-transparent)
-          );
+        &--1 {
+          & > * {
+            background-image: linear-gradient(
+              to bottom right,
+              var(--color-secondary-light-transparent),
+              var(--color-secondary-dark-transparent)
+            );
+          }
+        }
+
+        &--2 {
+          & > * {
+            background-image: linear-gradient(
+              to bottom right,
+              var(--color-primary-light-transparent),
+              var(--color-primary-dark-transparent)
+            );
+          }
+        }
+
+        &--3 {
+          & > * {
+            background-image: linear-gradient(
+              to bottom right,
+              var(--color-tertiary-light-transparent),
+              var(--color-tertiary-dark-transparent)
+            );
+          }
         }
       }
 
@@ -127,9 +153,8 @@
       justify-content: center;
       align-items: center;
 
-      transform: rotateY(
-        180deg
-      ); // back-side initially flipped and since 'backface-visibility: hidden;' is set to hidden, its backside is hidden for the user.
+      // back-side initially flipped and since 'backface-visibility: hidden;' is set to hidden, its backside is hidden for the user -->
+      transform: rotateY(-180deg);
 
       &--1 {
         background-image: linear-gradient(
@@ -137,6 +162,40 @@
           var(--color-secondary-light),
           var(--color-secondary-dark)
         );
+      }
+
+      &--2 {
+        background-image: linear-gradient(
+          to right bottom,
+          var(--color-primary),
+          var(--color-primary-dark)
+        );
+      }
+
+      &--3 {
+        background-image: linear-gradient(
+          to right bottom,
+          var(--color-tertiary-light),
+          var(--color-tertiary-dark)
+        );
+      }
+
+      &-title {
+        &-container {
+          color: var(--color-white);
+        }
+
+        &--small {
+          font-size: 3rem;
+          font-weight: 300;
+          margin-bottom: 2rem;
+        }
+
+        &--big {
+          font-size: 6rem;
+          font-weight: 300;
+          margin-bottom: 3rem;
+        }
       }
     }
   }

@@ -10,8 +10,16 @@
   --color-primary-dark-transparent-2: rgba(39, 180, 133, 0.5);
   --color-secondary-light: #ffb900;
   --color-secondary-dark: #ff7730;
+  --color-secondary-light-transparent: rgba(255, 187, 0, 0.8);
+  --color-secondary-light-transparent-2: rgba(255, 187, 0, 0.5);
+  --color-secondary-dark-transparent: rgba(255, 120, 48, 0.8);
+  --color-secondary-dark-transparent-2: rgba(255, 120, 48, 0.5);
   --color-tertiary-light: #2998ff;
   --color-tertiary-dark: #5643fa;
+  --color-tertiary-light-transparent: rgba(41, 152, 255, 0.8);
+  --color-tertiary-light-transparent-2: rgba(41, 152, 255, 0.5);
+  --color-tertiary-dark-transparent: rgba(85, 67, 250, 0.8);
+  --color-tertiary-dark-transparent-2: rgba(85, 67, 250, 0.5);
   --color-grey-light: #eee;
   --color-grey-light-1: #f7f7f7;
   --color-grey-dark: #777;
@@ -161,10 +169,29 @@ body {
   background-color: var(--color-white);
   border-radius: 10rem;
 }
+.btn--green {
+  background-color: var(--color-primary-light);
+  color: var(--color-white);
+}
+.btn--green::after {
+  background-color: var(--color-primary-light);
+  border-radius: 10rem;
+}
 .btn--animated {
   animation: moveInTop 0.5s ease-out 0.75s;
   /* 👇 will automatically apply the values specified in the 'moveIntop' keyframe, before the animation starts. */
   animation-fill-mode: backwards;
+}
+.btn::after {
+  content: "";
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  transition: all 0.4s;
 }
 .btn:hover {
   transform: translateY(-3px);
@@ -178,17 +205,6 @@ body {
 .btn:active {
   transform: translateY(-1px);
   box-shadow: 0 0.5rem 1rem var(--color-black-transparent);
-}
-.btn::after {
-  content: "";
-  display: inline-block;
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: -1;
-  transition: all 0.4s;
 }
 
 .btn-inline:link, .btn-inline:visited {
@@ -279,12 +295,13 @@ body {
 .card {
   text-align: center;
   position: relative;
-  width: 28rem;
+  width: 30rem;
   height: 45rem;
   perspective: 100rem;
 }
 .card__container {
   display: flex;
+  margin-bottom: 7rem;
 }
 .card:not(:last-child) {
   margin-right: 4rem;
@@ -316,24 +333,26 @@ body {
   width: 100%;
 }
 .card__side-front-image--1 {
-  background-image: linear-gradient(to bottom right, var(--color-primary-transparent), var(--color-primary-dark-transparent-2)), url("/img/nat-4.jpg");
+  background-image: linear-gradient(to bottom right, var(--color-secondary-light-transparent-2), var(--color-secondary-dark-transparent-2)), url("/img/nat-5.jpg");
 }
 .card__side-front-image--2 {
-  background-image: linear-gradient(to bottom right, var(--color-primary-transparent), var(--color-primary-dark-transparent-2)), url("/img/nat-5.jpg");
+  background-image: linear-gradient(to bottom right, var(--color-primary-light-transparent-2), var(--color-primary-dark-transparent-2)), url("/img/nat-6.jpg");
 }
 .card__side-front-image--3 {
-  background-image: linear-gradient(to bottom right, var(--color-primary-transparent), var(--color-primary-dark-transparent-2)), url("/img/nat-6.jpg");
+  background-image: linear-gradient(to bottom right, var(--color-tertiary-light-transparent-2), var(--color-tertiary-dark-transparent-2)), url("/img/nat-7.jpg");
 }
 .card__side-front-title {
-  position: absolute;
-  top: 27%;
-  right: 0;
-  margin-right: 2rem;
-  font-size: 2rem;
+  font-size: 2.5rem;
   font-weight: 300;
   text-align: right;
   text-transform: uppercase;
   color: var(--color-white);
+}
+.card__side-front-title-container {
+  position: absolute;
+  top: 26%;
+  right: 0;
+  margin-right: 2rem;
 }
 .card__side-front-title > * {
   padding: 0.5rem 1rem;
@@ -343,7 +362,13 @@ body {
   bottom: 0.5rem;
 }
 .card__side-front-title--1 > * {
-  background-image: linear-gradient(to bottom right, var(--color-primary-transparent), var(--color-primary-dark-transparent));
+  background-image: linear-gradient(to bottom right, var(--color-secondary-light-transparent), var(--color-secondary-dark-transparent));
+}
+.card__side-front-title--2 > * {
+  background-image: linear-gradient(to bottom right, var(--color-primary-light-transparent), var(--color-primary-dark-transparent));
+}
+.card__side-front-title--3 > * {
+  background-image: linear-gradient(to bottom right, var(--color-tertiary-light-transparent), var(--color-tertiary-dark-transparent));
 }
 .card__side-front-benefits {
   margin-top: 2rem;
@@ -360,10 +385,29 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  transform: rotateY(180deg);
+  transform: rotateY(-180deg);
 }
 .card__side-back--1 {
   background-image: linear-gradient(to right bottom, var(--color-secondary-light), var(--color-secondary-dark));
+}
+.card__side-back--2 {
+  background-image: linear-gradient(to right bottom, var(--color-primary), var(--color-primary-dark));
+}
+.card__side-back--3 {
+  background-image: linear-gradient(to right bottom, var(--color-tertiary-light), var(--color-tertiary-dark));
+}
+.card__side-back-title-container {
+  color: var(--color-white);
+}
+.card__side-back-title--small {
+  font-size: 3rem;
+  font-weight: 300;
+  margin-bottom: 2rem;
+}
+.card__side-back-title--big {
+  font-size: 6rem;
+  font-weight: 300;
+  margin-bottom: 3rem;
 }
 
 .header {
@@ -439,7 +483,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  padding: 10rem 0 3rem;
   background-color: var(--color-grey-light-1);
 }
 
