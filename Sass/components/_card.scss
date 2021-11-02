@@ -41,13 +41,12 @@
     // Card -- FRONT SIDE
     &-front {
       &-image {
+        height: 23rem;
         background-size: cover;
         background-position: top;
         clip-path: polygon(0 0, 100% 0, 100% 80%, 0% 100%);
         border-top-left-radius: 3px;
         border-top-right-radius: 3px;
-        height: 45%;
-        width: 100%;
 
         &--1 {
           background-image: linear-gradient(
@@ -55,7 +54,7 @@
               var(--color-secondary-light-transparent-2),
               var(--color-secondary-dark-transparent-2)
             ),
-            url("/img/nat-5.jpg");
+            url("../img/nat-5.jpg"); // added '../' because this code will be compiled to the 'style.css' file, which is in a folder
         }
 
         &--2 {
@@ -64,7 +63,7 @@
               var(--color-primary-light-transparent-2),
               var(--color-primary-dark-transparent-2)
             ),
-            url("/img/nat-6.jpg");
+            url("../img/nat-6.jpg");
         }
 
         &--3 {
@@ -73,7 +72,7 @@
               var(--color-tertiary-light-transparent-2),
               var(--color-tertiary-dark-transparent-2)
             ),
-            url("/img/nat-7.jpg");
+            url("../img/nat-7.jpg");
         }
       }
 
@@ -86,7 +85,7 @@
 
         &-container {
           position: absolute;
-          top: 26%;
+          top: 30%;
           right: 0;
           margin-right: 2rem;
         }
@@ -132,7 +131,6 @@
       }
 
       &-benefits {
-        margin-top: 2rem;
         padding: 0 4rem;
 
         & > * {

@@ -324,22 +324,21 @@ body {
   backface-visibility: hidden;
 }
 .card__side-front-image {
+  height: 23rem;
   background-size: cover;
   background-position: top;
   clip-path: polygon(0 0, 100% 0, 100% 80%, 0% 100%);
   border-top-left-radius: 3px;
   border-top-right-radius: 3px;
-  height: 45%;
-  width: 100%;
 }
 .card__side-front-image--1 {
-  background-image: linear-gradient(to bottom right, var(--color-secondary-light-transparent-2), var(--color-secondary-dark-transparent-2)), url("/img/nat-5.jpg");
+  background-image: linear-gradient(to bottom right, var(--color-secondary-light-transparent-2), var(--color-secondary-dark-transparent-2)), url("../img/nat-5.jpg");
 }
 .card__side-front-image--2 {
-  background-image: linear-gradient(to bottom right, var(--color-primary-light-transparent-2), var(--color-primary-dark-transparent-2)), url("/img/nat-6.jpg");
+  background-image: linear-gradient(to bottom right, var(--color-primary-light-transparent-2), var(--color-primary-dark-transparent-2)), url("../img/nat-6.jpg");
 }
 .card__side-front-image--3 {
-  background-image: linear-gradient(to bottom right, var(--color-tertiary-light-transparent-2), var(--color-tertiary-dark-transparent-2)), url("/img/nat-7.jpg");
+  background-image: linear-gradient(to bottom right, var(--color-tertiary-light-transparent-2), var(--color-tertiary-dark-transparent-2)), url("../img/nat-7.jpg");
 }
 .card__side-front-title {
   font-size: 2.5rem;
@@ -350,7 +349,7 @@ body {
 }
 .card__side-front-title-container {
   position: absolute;
-  top: 26%;
+  top: 30%;
   right: 0;
   margin-right: 2rem;
 }
@@ -371,7 +370,6 @@ body {
   background-image: linear-gradient(to bottom right, var(--color-tertiary-light-transparent), var(--color-tertiary-dark-transparent));
 }
 .card__side-front-benefits {
-  margin-top: 2rem;
   padding: 0 4rem;
 }
 .card__side-front-benefits > * {
