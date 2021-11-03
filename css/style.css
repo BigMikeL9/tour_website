@@ -149,6 +149,14 @@ body {
   margin-bottom: 6rem;
 }
 
+.u-margin-top-large {
+  margin-top: 6rem;
+}
+
+.u-margin-top-large--1 {
+  margin-top: 7rem;
+}
+
 .btn:link, .btn:visited {
   display: inline-block;
   position: relative;
@@ -301,7 +309,6 @@ body {
 }
 .card__container {
   display: flex;
-  margin-bottom: 7rem;
 }
 .card:not(:last-child) {
   margin-right: 4rem;
@@ -348,9 +355,8 @@ body {
   text-transform: uppercase;
   color: var(--color-white);
   position: absolute;
-  top: 30%;
-  right: 0;
-  margin-right: 2rem;
+  top: 14rem;
+  right: 2rem;
 }
 .card__side-front-title > * {
   padding: 0.6rem 1rem;
@@ -396,16 +402,47 @@ body {
 }
 .card__side-back-title-container {
   color: var(--color-white);
+  margin-bottom: 8rem;
 }
 .card__side-back-title--small {
-  font-size: 3rem;
-  font-weight: 300;
-  margin-bottom: 2rem;
+  font-size: 1.4rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  margin-bottom: 0.8rem;
 }
 .card__side-back-title--big {
   font-size: 6rem;
-  font-weight: 300;
-  margin-bottom: 3rem;
+  font-weight: 100;
+}
+
+.testimonial {
+  margin: 0 auto;
+  width: 65%;
+  padding: 5rem 6.5rem 5rem 10rem;
+  background-color: var(--color-grey-light-transparent);
+  box-shadow: 0 3rem 6rem var(--color-black-transparent);
+  transform: skewX(-20deg);
+}
+.testimonial:hover .testimonial__image--1 {
+  filter: blur(1rem);
+}
+.testimonial__image {
+  height: 100%;
+}
+.testimonial__image-container {
+  height: 15rem;
+  width: 15rem;
+  float: left;
+  clip-path: circle(50% at 50% 50%);
+  shape-outside: circle(50% at 50% 50%);
+  transform: translateX(-3rem) skewX(20deg);
+}
+.testimonial__text-container {
+  text-align: left;
+  transform: skewX(20deg);
+}
+.testimonial__text--content {
+  line-height: 1.5;
 }
 
 .header {
@@ -481,7 +518,15 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 10rem 0 3rem;
+  padding: 10rem 0 5rem;
+  background-color: var(--color-grey-light-1);
+}
+
+.stories {
+  text-align: center;
+  font-size: var(--default-font-size);
+  padding: 10rem 0;
+  height: 100vh;
   background-color: var(--color-grey-light-1);
 }
 

@@ -1,0 +1,60 @@
+.testimonial {
+  margin: 0 auto;
+  width: 65%;
+
+  // position: relative;
+  padding: 5rem 6.5rem 5rem 10rem;
+  background-color: var(--color-grey-light-transparent);
+  box-shadow: 0 3rem 6rem var(--color-black-transparent);
+  transform: skewX(-20deg);
+
+  // &::after {
+  //   content: "";
+  //   position: absolute;
+  //   top: 0;
+  //   left: 0;
+  //   height: 100%;
+  //   width: 100%;
+  //   border-radius: 3px;
+  //   background-color: var(--color-grey-light-transparent);
+  //   box-shadow: 0 3rem 6rem var(--color-black-transparent);
+
+  //   transform: skewX(-20deg);
+  // }
+
+  &:hover &__image--1 {
+    filter: blur(1rem);
+  }
+
+  &__image {
+    &-container {
+      height: 15rem;
+      width: 15rem;
+      float: left;
+      clip-path: circle(50% at 50% 50%);
+      shape-outside: circle(50% at 50% 50%);
+
+      // the best way to move around an element that is floated is to not mess with 'margin'/'padding' properties --> instead use 'transform' property.
+      transform: translateX(-3rem) skewX(20deg);
+    }
+
+    height: 100%;
+
+    &--1 {
+    }
+
+    &--2 {
+    }
+  }
+
+  &__text {
+    &-container {
+      text-align: left;
+      transform: skewX(20deg);
+    }
+
+    &--content {
+      line-height: 1.5;
+    }
+  }
+}

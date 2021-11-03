@@ -70,6 +70,18 @@
   justify-content: center;
   align-items: center;
 
-  padding: 10rem 0 3rem;
+  padding: 10rem 0 5rem;
+  background-color: var(--color-grey-light-1);
+}
+
+/////////////////////////////////////////////////////
+// Stories Section
+
+.stories {
+  text-align: center;
+  font-size: var(--default-font-size);
+
+  padding: 10rem 0;
+  height: 100vh;
   background-color: var(--color-grey-light-1);
 }

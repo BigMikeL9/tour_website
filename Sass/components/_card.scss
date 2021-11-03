@@ -9,7 +9,6 @@
 
   &__container {
     display: flex;
-    margin-bottom: 7rem;
   }
 
   &:not(:last-child) {
@@ -48,7 +47,7 @@
         -webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 0% 100%);
         clip-path: polygon(0 0, 100% 0, 100% 85%, 0% 100%);
 
-        background-blend-mode: screen;
+        background-blend-mode: screen; // blends linear-gradient and image
 
         &--1 {
           background-image: linear-gradient(
@@ -86,9 +85,8 @@
         color: var(--color-white);
 
         position: absolute;
-        top: 30%;
-        right: 0;
-        margin-right: 2rem;
+        top: 14rem;
+        right: 2rem;
 
         & > * {
           padding: 0.6rem 1rem;
@@ -182,18 +180,19 @@
       &-title {
         &-container {
           color: var(--color-white);
+          margin-bottom: 8rem;
         }
 
         &--small {
-          font-size: 3rem;
-          font-weight: 300;
-          margin-bottom: 2rem;
+          font-size: 1.4rem;
+          font-weight: 500;
+          text-transform: uppercase;
+          margin-bottom: 0.8rem;
         }
 
         &--big {
           font-size: 6rem;
-          font-weight: 300;
-          margin-bottom: 3rem;
+          font-weight: 100;
         }
       }
     }
