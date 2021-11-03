@@ -319,6 +319,7 @@ body {
   height: 100%;
   width: 100%;
   border-radius: 3px;
+  overflow: hidden;
   box-shadow: 0 1.5rem 4rem var(--color-black-transparent);
   transition: all 0.8s ease;
   backface-visibility: hidden;
@@ -327,9 +328,9 @@ body {
   height: 23rem;
   background-size: cover;
   background-position: top;
-  clip-path: polygon(0 0, 100% 0, 100% 80%, 0% 100%);
-  border-top-left-radius: 3px;
-  border-top-right-radius: 3px;
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 0% 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 85%, 0% 100%);
+  background-blend-mode: screen;
 }
 .card__side-front-image--1 {
   background-image: linear-gradient(to bottom right, var(--color-secondary-light-transparent-2), var(--color-secondary-dark-transparent-2)), url("../img/nat-5.jpg");
@@ -341,24 +342,22 @@ body {
   background-image: linear-gradient(to bottom right, var(--color-tertiary-light-transparent-2), var(--color-tertiary-dark-transparent-2)), url("../img/nat-7.jpg");
 }
 .card__side-front-title {
-  font-size: 2.5rem;
+  font-size: 2.8rem;
   font-weight: 300;
   text-align: right;
   text-transform: uppercase;
   color: var(--color-white);
-}
-.card__side-front-title-container {
   position: absolute;
   top: 30%;
   right: 0;
   margin-right: 2rem;
 }
 .card__side-front-title > * {
-  padding: 0.5rem 1rem;
+  padding: 0.6rem 1rem;
 }
 .card__side-front-title :first-child {
   position: relative;
-  bottom: 0.5rem;
+  bottom: 0.6rem;
 }
 .card__side-front-title--1 > * {
   background-image: linear-gradient(to bottom right, var(--color-secondary-light-transparent), var(--color-secondary-dark-transparent));
@@ -369,13 +368,14 @@ body {
 .card__side-front-title--3 > * {
   background-image: linear-gradient(to bottom right, var(--color-tertiary-light-transparent), var(--color-tertiary-dark-transparent));
 }
-.card__side-front-benefits {
+.card__side-front-details {
   padding: 0 4rem;
+  list-style: none;
 }
-.card__side-front-benefits > * {
+.card__side-front-details > * {
   padding: 1.5rem 0;
 }
-.card__side-front-benefits :not(:last-child) {
+.card__side-front-details :not(:last-child) {
   border-bottom: 2px solid var(--color-grey-light);
 }
 .card__side-back {
