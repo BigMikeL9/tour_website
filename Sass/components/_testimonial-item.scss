@@ -1,6 +1,7 @@
 .testimonial {
-  margin: 0 auto;
+  margin: 8rem auto 0;
   width: 65%;
+  cursor: default;
 
   // position: relative;
   padding: 5rem 6.5rem 5rem 10rem;
@@ -22,37 +23,63 @@
   //   transform: skewX(-20deg);
   // }
 
-  &:hover &__image--1 {
-    filter: blur(1rem);
+  // image blur
+  &:hover &__image {
+    filter: blur(0.3rem) brightness(80%);
+    transform: translate(-4rem) scale(1);
+  }
+
+  // image text show
+  &:hover &__image-caption {
+    top: 50%;
+    opacity: 1;
+  }
+
+  &__image-container {
+    height: 15rem;
+    width: 15rem;
+    float: left;
+    clip-path: circle(50% at 50% 50%);
+    shape-outside: circle(50% at 50% 50%);
+
+    // the best way to move around an element that is floated is to not mess with 'margin'/'padding' properties --> instead use 'transform' property.
+    transform: translateX(-3rem) skewX(20deg);
+    position: relative;
+
+    overflow: hidden;
   }
 
   &__image {
-    &-container {
-      height: 15rem;
-      width: 15rem;
-      float: left;
-      clip-path: circle(50% at 50% 50%);
-      shape-outside: circle(50% at 50% 50%);
-
-      // the best way to move around an element that is floated is to not mess with 'margin'/'padding' properties --> instead use 'transform' property.
-      transform: translateX(-3rem) skewX(20deg);
-    }
-
     height: 100%;
+    transform: translateX(-4rem) scale(1.4);
 
-    &--1 {
-    }
+    transition: all 0.5s;
+    backface-visibility: hidden; // fix to prevent animation shaking
 
-    &--2 {
+    &-caption {
+      position: absolute;
+      top: 70%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+
+      font-size: 1.7rem;
+      text-transform: uppercase;
+      color: var(--color-white);
+      line-height: 1.5;
+      letter-spacing: 0.2rem;
+      opacity: 0;
+
+      transition: all 0.5s ease;
+      backface-visibility: hidden; // fix to prevent animation shaking
     }
   }
 
-  &__text {
-    &-container {
-      text-align: left;
-      transform: skewX(20deg);
-    }
+  &__text-container {
+    text-align: left;
+    transform: skewX(20deg);
+  }
 
+  &__text {
     &--content {
       line-height: 1.5;
     }
