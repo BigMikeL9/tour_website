@@ -25,15 +25,19 @@
 
   --color-grey-light: #eee;
   --color-grey-light-1: #f7f7f7;
+
   --color-grey-dark: #777;
+  --color-grey-dark-2: #999;
 
   --color-white: #fff;
+  --color-white-transparent: rgba(255, 255, 255, 0.8);
   --color-black: #000;
 
   --color-white-transparent: rgba(255, 255, 255, 0.7);
 
   --color-grey-light-transparent: rgba(238, 238, 238, 0.7);
   --color-black-transparent: rgba(0, 0, 0, 0.2);
+  --color-black-transparent-2: rgba(0, 0, 0, 0.7);
 
   // FONT-SIZE
   --default-font-size: 1.6rem;

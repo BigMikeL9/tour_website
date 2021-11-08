@@ -78,10 +78,49 @@
 // Stories Section
 
 .stories {
-  text-align: center;
   font-size: var(--default-font-size);
+  text-align: center;
 
   padding: 10rem 0;
-  height: 100vh;
-  background-color: var(--color-grey-light-1);
+
+  position: relative; // for background-video
+}
+
+/////////////////////////////////////////////////////
+// Booking Section
+.booking {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: 100vh; // delete later
+  background-image: linear-gradient(
+    to bottom right,
+    var(--color-primary),
+    var(--color-primary-dark)
+  );
+
+  &__form-container {
+    background-image: linear-gradient(
+        105deg,
+        var(--color-white-transparent) 0,
+        var(--color-white-transparent) 50%,
+        rgba(255, 0, 0, 0) 50%
+      ),
+      url("../img/nat-10.jpg");
+    background-size: cover;
+    background-position: top;
+
+    border-radius: 3px;
+    box-shadow: 0 1.5rem 4rem var(--color-black-transparent);
+
+    // Delate later
+    height: 60%;
+    width: 70%;
+  }
+}
+
+form {
+  padding: 6rem;
+  width: 55%;
 }

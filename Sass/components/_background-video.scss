@@ -1,17 +1,17 @@
 .background-video {
-    position:absolute;
-    top: 0;
-    left: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0.15;
+
+  overflow: hidden;
+  z-index: -1;
+
+  &__content {
     height: 100%;
     width: 100%;
-    opacity: 0.15;
-
-    overflow: hidden;
-    z-index:-1;
-
-    &__content {
-        height: 100%;
-        width: 100%;
-        object-fit: cover; // similar to 'background-size' but for HTML elements, like 'video' element.
-    }
+    object-fit: cover; // similar to 'background-size' but for HTML elements, like 'video' element.
+  }
 }

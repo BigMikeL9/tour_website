@@ -223,6 +223,14 @@
     </section>
 
     <section class="stories">
+      <div class="background-video">
+        <video class="background-video__content" autoplay muted loop>
+          <source src="img/video.mp4" type="video/mp4" />
+          <source src="img/video.webm" type="video/webm" />
+          Your browser is not Supported!
+        </video>
+      </div>
+
       <div class="u-margin-bottom-large">
         <h3 class="heading-secondary">We make people fantastically happy</h3>
       </div>
@@ -232,8 +240,12 @@
           <img
             src="img/nat-8.jpg"
             alt="Mary's Testimonial"
-            class="testimonial__image testimonial__image--1"
+            class="testimonial__image"
           />
+          <figcaption class="testimonial__image-caption">
+            Mary <br />
+            Johns
+          </figcaption>
         </figure>
         <div class="testimonial__text-container">
           <h3 class="heading__tertiary u-margin-bottom-small">
@@ -248,6 +260,69 @@
             minus dolorum asperiores quos. Illo, obcaecati sequi explicabo.
           </p>
         </div>
+      </div>
+
+      <div class="testimonial">
+        <figure class="testimonial__image-container">
+          <img
+            src="img/nat-9.jpg"
+            alt="Mary's Testimonial"
+            class="testimonial__image"
+          />
+          <figcaption class="testimonial__image-caption">
+            Franco <br />
+            Leero
+          </figcaption>
+        </figure>
+        <div class="testimonial__text-container">
+          <h3 class="heading__tertiary u-margin-bottom-small">
+            WAW! I am a different Human being now
+          </h3>
+          <p class="testimonial__text--content">
+            Veniam eligendi nulla quam explicabo, eos cupiditate possimus
+            corrupti error distinctio quasi doloremque magnam natus minus
+            dolorum asperiores quos. Illo, obcaecati sequi explicabo, eos
+            cupiditate possimus corrupti error distinctio quasi doloremque
+            magnam natus minus dolorum asperiores quos. Illo, obcaecati sequi
+            explicabo.
+          </p>
+        </div>
+      </div>
+
+      <div class="u-margin-top-large">
+        <a href="#" class="btn-inline">Read all Stories &rarr;</a>
+      </div>
+    </section>
+
+    <section class="booking">
+      <div class="booking__form-container">
+        <form action="#" class="form" autocomplete="off">
+          <div class="u-margin-bottom-medium">
+            <h2 class="heading-secondary">Start Booking Now!</h2>
+          </div>
+
+          <div class="form__group">
+            <input
+              type="text"
+              class="form__input"
+              id="name"
+              placeholder="Full name"
+              required
+            />
+            <label for="name" class="form__label">Full name</label>
+          </div>
+
+          <div class="form__group">
+            <input
+              type="email"
+              class="form__input"
+              id="email"
+              placeholder="Email address"
+              required
+            />
+            <label for="email" class="form__label">Email address</label>
+          </div>
+        </form>
       </div>
     </section>
   </main>
