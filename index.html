@@ -322,8 +322,73 @@
             />
             <label for="email" class="form__label">Email address</label>
           </div>
+
+          <div class="form__group">
+            <div class="form__radio-group">
+              <input
+                type="radio"
+                name="size"
+                id="small"
+                class="form__radio-input"
+              />
+              <label for="small" class="form__radio-label" name="size">
+                <span class="form__radio-button"></span>
+                Small tour group</label
+              >
+            </div>
+
+            <div class="form__radio-group">
+              <input
+                type="radio"
+                name="size"
+                id="large"
+                class="form__radio-input"
+              />
+              <label for="large" class="form__radio-label" name="size">
+                <span class="form__radio-button"></span>
+                Large tour group</label
+              >
+            </div>
+          </div>
+
+          <div class="u-margin-top-large">
+            <!-- We have to use a Button element in a form inorder to submit it, and NOT an anchor tag -->
+            <button href="#" class="btn btn--green">Next Step &rarr;</button>
+          </div>
         </form>
       </div>
     </section>
+
+    <footer class="footer">
+      <div class="footer__logo-container">
+        <img
+          src="/img/logo-green-2x.png"
+          alt="Footer Logo"
+          class="footer__logo"
+        />
+      </div>
+
+      <div class="footer__content-container">
+        <div class="footer__nav-container">
+          <ul class="footer__nav">
+            <li><a href="#" class="footer__nav-link">Company</a></li>
+            <li><a href="#" class="footer__nav-link">Contact Us</a></li>
+            <li><a href="#" class="footer__nav-link">Carrers</a></li>
+            <li><a href="#" class="footer__nav-link">Privacy Policy</a></li>
+            <li><a href="#" class="footer__nav-link">Terms</a></li>
+          </ul>
+        </div>
+
+        <div class="footer__copyright-container">
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius
+            voluptas rerum earum facilis harum, inventore iusto cupiditate ad
+            officiis dicta dolorem tempora inventore iusto cupiditate ad
+            officiis dicta dolorem tempora itaque ullam expedita corrupti
+            veritatis perferendis quae corporis?
+          </p>
+        </div>
+      </div>
+    </footer>
   </main>
 </html>

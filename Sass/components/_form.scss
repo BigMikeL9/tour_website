@@ -15,6 +15,8 @@
     display: block;
     width: 90%;
 
+    transition: all 0.3s;
+
     &:focus {
       outline: none;
       border-bottom: 3px solid var(--color-primary);
@@ -31,5 +33,73 @@
   }
 
   &__label {
+    font-size: 1.2rem;
+    font-weight: 700;
+    display: block;
+    margin: 0.7rem 0 0 2rem;
+
+    transition: all 0.3s;
+  }
+
+  // when the placeholder text of the 'form__input' element is shown --> select and animate the 'label' element (its first preceding sibling)
+  &__input:placeholder-shown + &__label {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-4rem);
+  }
+
+  // inorder for HTML to consider two radio buttons as a group, we have to give them 'name="..."' attributes with the same value. (only one radio button can be selected, when they have the same 'name="..."' attribute value.
+
+  &__radio {
+    &-group {
+      width: 49%;
+      display: inline-block;
+      position: relative;
+    }
+
+    &-input {
+      display: none;
+    }
+
+    &-label {
+      font-size: var(--default-font-size);
+      cursor: pointer;
+      padding-left: 4rem;
+    }
+
+    // we CANNOT style radio buttons in CSS and so we have to build our own custom Radio buttons. And then HIDE the original radio button.
+    &-button {
+      display: inline-block;
+      height: 3rem;
+      width: 3rem;
+      border: 5px solid var(--color-primary-dark);
+      border-radius: 50%;
+      margin-right: 0.7rem;
+      position: absolute; // doesn't have to be 'relative' for the '::after' pseudo-element, just has to be SPECIFIED.
+      left: 0;
+      top: -0.45rem;
+
+      &::after {
+        content: "";
+        display: inline-block;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        height: 70%;
+        width: 70%;
+        border-radius: 50%;
+        background-color: var(--color-primary-dark);
+
+        opacity: 0;
+        transition: opacity 0.2s;
+      }
+    }
+
+    // When we click the 'form__radio-label' element, the radio  element ('form__radio-input') becomes checked.
+    // when the radio element is checked --> we style it's sibling's ('form__radio-label') CHILD's '::after' pseudo-element.
+    &-input:checked ~ &-label :first-child::after {
+      opacity: 1;
+    }
   }
 }
