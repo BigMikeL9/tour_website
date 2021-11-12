@@ -1,0 +1,137 @@
+.nav {
+  &__checkbox {
+    display: none;
+  }
+
+  &__button {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    height: 7rem;
+    width: 7rem;
+    position: fixed;
+    top: 3.5rem;
+    right: 5.5rem;
+
+    z-index: 3000;
+    cursor: pointer;
+    border-radius: 50%;
+    background-color: var(--color-white);
+    box-shadow: 0 1rem 3rem var(--color-black-transparent);
+
+    & > * {
+      width: 50%;
+      border-top: 3px solid var(--color-grey-dark-3);
+      border-radius: 100rem;
+
+      &:not(:last-child) {
+        margin-bottom: 0.9rem;
+      }
+    }
+  }
+
+  // Active nav background
+  &__background {
+    height: 6rem;
+    width: 6rem;
+    position: fixed;
+    top: 4rem;
+    right: 6rem;
+    border-radius: 50%;
+    background-image: radial-gradient(
+      var(--color-primary),
+      var(--color-primary-dark)
+    );
+    z-index: 1000;
+
+    // transform: scale(0);
+    transition: all 0.8s cubic-bezier(0.83, 0, 0.17, 1);
+  }
+
+  // nav menu
+  &__list-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2000;
+    text-align: center;
+
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(-10rem);
+    transition: all 0.8s cubic-bezier(0.68, -0.6, 0.32, 1.6);
+  }
+
+  &__list {
+    list-style: none;
+  }
+
+  &__item {
+    &:not(:last-child) {
+      margin-bottom: 1rem;
+    }
+  }
+
+  &__link {
+    &:link,
+    &:visited {
+      display: inline-block;
+      font-size: 3rem;
+      font-weight: 300;
+      letter-spacing: 0.1rem;
+      color: var(--color-white);
+      padding: 1.5rem 2rem;
+      text-transform: uppercase;
+      text-decoration: none;
+      position: relative;
+
+      // For Cool hover animation
+      background-image: linear-gradient(
+        120deg,
+        transparent 0%,
+        transparent 50%,
+        var(--color-white) 50%
+      );
+      background-size: 220%;
+      transition: all 0.4s;
+
+      span {
+        display: inline-block;
+        margin-right: 1.5rem;
+      }
+    }
+
+    &:hover,
+    &:active {
+      background-position: 100%; // for background animation (moves to left)
+      transform: translateX(1rem);
+      color: var(--color-primary);
+    }
+  }
+
+  // Active nav menu animation (using 'checkbox-hack'. Without JavaScript)
+  &__checkbox:checked ~ &__button {
+    & > * {
+      transform: rotate(45deg);
+    }
+  }
+
+  &__checkbox:checked ~ &__background {
+    transform: scale(80);
+  }
+
+  &__checkbox:checked ~ &__list-container {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+  }
+}
