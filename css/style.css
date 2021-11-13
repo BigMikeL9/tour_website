@@ -596,13 +596,22 @@ body {
   background-color: var(--color-white);
   box-shadow: 0 1rem 3rem var(--color-black-transparent);
 }
-.nav__button > * {
-  width: 50%;
-  border-top: 3px solid var(--color-grey-dark-3);
+.nav__button-icon, .nav__button::before, .nav__button::after {
+  display: inline-block;
+  width: 3rem;
+  height: 2px;
+  background-color: var(--color-grey-dark-3);
   border-radius: 100rem;
+  transition: all 0.3s cubic-bezier(0.68, -0.6, 0.32, 1.6);
 }
-.nav__button > *:not(:last-child) {
-  margin-bottom: 0.9rem;
+.nav__button::before, .nav__button::after {
+  content: "";
+}
+.nav__button-icon {
+  margin: 1rem 0;
+}
+.nav__button:hover .nav__button-icon {
+  margin: 0.85rem 0;
 }
 .nav__background {
   height: 6rem;
@@ -661,8 +670,16 @@ body {
   transform: translateX(1rem);
   color: var(--color-primary);
 }
-.nav__checkbox:checked ~ .nav__button > * {
-  transform: rotate(45deg);
+.nav__checkbox:checked ~ .nav__button::before {
+  transform: rotate(135deg) translate(0.07rem, -0.2rem);
+}
+.nav__checkbox:checked ~ .nav__button .nav__button-icon {
+  margin: 0;
+  opacity: 0;
+  transform: translateX(2rem);
+}
+.nav__checkbox:checked ~ .nav__button::after {
+  transform: rotate(-135deg) translate(0.07rem, 0.2rem);
 }
 .nav__checkbox:checked ~ .nav__background {
   transform: scale(80);

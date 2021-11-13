@@ -1,8 +1,10 @@
 .nav {
+  // 'check-box' hack
   &__checkbox {
     display: none;
   }
 
+  // Nav Button
   &__button {
     display: flex;
     flex-direction: column;
@@ -21,18 +23,34 @@
     background-color: var(--color-white);
     box-shadow: 0 1rem 3rem var(--color-black-transparent);
 
-    & > * {
-      width: 50%;
-      border-top: 3px solid var(--color-grey-dark-3);
+    // Nav Button - Hamburger menu
+    &-icon,
+    &::before,
+    &::after {
+      display: inline-block;
+      width: 3rem;
+      height: 2px;
+      background-color: var(--color-grey-dark-3);
       border-radius: 100rem;
 
-      &:not(:last-child) {
-        margin-bottom: 0.9rem;
-      }
+      transition: all 0.3s cubic-bezier(0.68, -0.6, 0.32, 1.6);
+    }
+
+    &::before,
+    &::after {
+      content: "";
+    }
+
+    &-icon {
+      margin: 1rem 0;
+    }
+
+    &:hover &-icon {
+      margin: 0.85rem 0;
     }
   }
 
-  // Active nav background
+  // Inactive nav background
   &__background {
     height: 6rem;
     width: 6rem;
@@ -46,7 +64,6 @@
     );
     z-index: 1000;
 
-    // transform: scale(0);
     transition: all 0.8s cubic-bezier(0.83, 0, 0.17, 1);
   }
 
@@ -119,10 +136,18 @@
   }
 
   // Active nav menu animation (using 'checkbox-hack'. Without JavaScript)
-  &__checkbox:checked ~ &__button {
-    & > * {
-      transform: rotate(45deg);
-    }
+  &__checkbox:checked ~ &__button::before {
+    transform: rotate(135deg) translate(0.07rem, -0.2rem);
+  }
+
+  &__checkbox:checked ~ &__button &__button-icon {
+    margin: 0;
+    opacity: 0;
+    transform: translateX(2rem);
+  }
+
+  &__checkbox:checked ~ &__button::after {
+    transform: rotate(-135deg) translate(0.07rem, 0.2rem);
   }
 
   &__checkbox:checked ~ &__background {
