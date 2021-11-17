@@ -6,7 +6,9 @@
   width: 100vw;
   z-index: 8000;
 
-  transition: all 0.5s;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s;
 
   &__background {
     height: 100vh;
@@ -23,13 +25,15 @@
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%) scale(0.5);
     width: 70%;
     border-radius: 3px;
     box-shadow: 0 2rem 4rem var(--color-black-transparent);
     background-color: var(--color-grey-light-1);
 
     overflow: hidden; // for images overflowing the container border-radius
+
+    transition: all 0.4s 0.2s;
   }
 
   &__left {
@@ -64,6 +68,38 @@
       -moz-hyphens: auto; // Mozzila browser
       -ms-hyphens: auto; // edge browser
       -webkit-hyphens: auto; // chrome and safari browsers
+    }
+  }
+
+  // styling will apply when 'popup' is the ACTIVE target element
+  &:target {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  &:target &__container {
+    transform: translate(-50%, -50%) scale(1);
+  }
+
+  &__close {
+    &:link,
+    &:visited {
+      display: inline-block;
+      position: absolute;
+      top: 2rem;
+      right: 3rem;
+      font-size: 2.2rem;
+      color: var(--color-grey-dark-2);
+      text-decoration: none;
+      line-height: 1;
+
+      transition: all 0.1s;
+    }
+
+    &:hover,
+    &:active {
+      color: var(--color-primary-dark);
+      transform: scale(1.1);
     }
   }
 }
