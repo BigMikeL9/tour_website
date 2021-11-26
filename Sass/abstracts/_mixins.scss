@@ -1,0 +1,44 @@
+// MEDIA QUERY MANAGER
+
+/* 
+Desktop-First approach 👇
+
+0 - 600px           --> Mobile                            [max-width: 37.5em]
+600px - 900px       --> Tablet-Portrait                   [max-width: 56.25em]
+900px - 1200px      --> Tablet-Landscape                  [max-width: 75em]
+[1200px - 1800px]   --> Where our NORMAL STYLES APPLY
+1800px ++           --> Big Desktop                       [min-width: 112.5em]
+
+👇 $breakpoint argument choices 👇
+--> phone                       [600px]
+--> tablet-portrait             [900px]
+--> tablet-landscape            [1200px]
+--> big-desktop                 [1800px]
+
+*/
+
+@mixin responsive($breakpoint) {
+  @if $breakpoint == tablet-landscape {
+    @media (max-width: 75em) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == tablet-portrait {
+    @media (max-width: 56.25em) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == mobile {
+    @media (max-width: 37.5em) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == big-desktop {
+    @media (min-width: 112.5em) {
+      @content;
+    }
+  }
+}

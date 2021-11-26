@@ -9,6 +9,27 @@
 html {
   font-size: 62.5%; // defines -->  1rem = 10px
   box-sizing: border-box;
+  scroll-behavior: smooth;
+
+  // 'max-width: 1200px'
+  @include responsive(tablet-landscape) {
+    font-size: 56%;
+  }
+
+  // 'max-width: 900px'
+  @include responsive(tablet-portrait) {
+    font-size: 50%;
+  }
+
+  // 'max-width: 600px'
+  @include responsive(mobile) {
+    font-size: 50%;
+  }
+
+  // 'min-width: 1800px'
+  @include responsive(big-desktop) {
+    font-size: 90%;
+  }
 }
 
 body {

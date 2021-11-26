@@ -36,6 +36,22 @@
   --default-font-size: 1.6rem;
 }
 
+/* 
+Desktop-First approach 👇
+
+0 - 600px           --> Mobile                            [max-width: 37.5em]
+600px - 900px       --> Tablet-Portrait                   [max-width: 56.25em]
+900px - 1200px      --> Tablet-Landscape                  [max-width: 75em]
+[1200px - 1800px]   --> Where our NORMAL STYLES APPLY
+1800px ++           --> Big Desktop                       [min-width: 112.5em]
+
+👇 $breakpoint argument choices 👇
+--> phone                       [600px]
+--> tablet-portrait             [900px]
+--> tablet-landscape            [1200px]
+--> big-desktop                 [1800px]
+
+*/
 @keyframes moveInLeft {
   0% {
     opacity: 0;
@@ -83,6 +99,27 @@
 html {
   font-size: 62.5%;
   box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+@media (max-width: 75em) {
+  html {
+    font-size: 56%;
+  }
+}
+@media (max-width: 56.25em) {
+  html {
+    font-size: 50%;
+  }
+}
+@media (max-width: 37.5em) {
+  html {
+    font-size: 50%;
+  }
+}
+@media (min-width: 112.5em) {
+  html {
+    font-size: 90%;
+  }
 }
 
 body {
@@ -606,7 +643,7 @@ body {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%) scale(0.5);
+  transform: translate(-50%, -50%) scale(0.25);
   width: 70%;
   border-radius: 3px;
   box-shadow: 0 2rem 4rem var(--color-black-transparent);
@@ -673,9 +710,9 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  position: fixed;
   height: 7rem;
   width: 7rem;
-  position: fixed;
   top: 3.5rem;
   right: 5.5rem;
   z-index: 3000;
@@ -717,9 +754,9 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  position: fixed;
   height: 100vh;
   width: 100vw;
-  position: fixed;
   top: 0;
   left: 0;
   z-index: 2000;
