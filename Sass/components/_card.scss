@@ -9,10 +9,21 @@
 
   &__container {
     display: flex;
+
+    @include responsive(tablet-portrait) {
+      flex-direction: column;
+      // justify-content: center;
+      // align-items: center;
+    }
   }
 
   &:not(:last-child) {
     margin-right: 4rem;
+
+    @include responsive(tablet-portrait) {
+      margin-right: 0;
+      margin-bottom: 4rem;
+    }
   }
 
   &:hover &__side-front {

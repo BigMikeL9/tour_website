@@ -23,6 +23,10 @@
     background-color: var(--color-white);
     box-shadow: 0 1rem 3rem var(--color-black-transparent);
 
+    @include responsive(tablet-portrait) {
+      top: 3rem;
+    }
+
     // Nav Button - Hamburger menu
     &-icon,
     &::before,
@@ -65,6 +69,10 @@
     z-index: 1000;
 
     transition: all 0.8s cubic-bezier(0.83, 0, 0.17, 1);
+
+    @include responsive(tablet-portrait) {
+      top: 3.5rem;
+    }
   }
 
   // nav menu

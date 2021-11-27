@@ -5,6 +5,10 @@
   padding: 10rem 15rem;
   background-color: var(--color-grey-dark-3);
 
+  @include responsive(mobile) {
+    padding: 10rem 5rem;
+  }
+
   &__logo-container {
     text-align: center;
     margin-bottom: 8rem;
@@ -17,6 +21,11 @@
   &__content-container {
     display: flex;
     justify-content: space-between;
+
+    @include responsive(tablet-portrait) {
+      flex-direction: column;
+      align-items: center;
+    }
 
     & > * {
       border-top: 1px solid var(--color-grey-light-1);
@@ -56,7 +65,12 @@
 
   &__copyright-container {
     width: 40%;
-
     line-height: 1.7;
+
+    @include responsive(tablet-portrait) {
+      width: 90%;
+      text-align: center;
+      margin-top: 4rem;
+    }
   }
 }

@@ -12,12 +12,26 @@
 
   &__content-container {
     display: flex;
+
+    @include responsive(tablet-portrait) {
+      flex-direction: column;
+    }
+
+    // @include responsive(mobile) {
+    // }
   }
 
   &__content {
     width: 45%;
     padding-top: 4rem;
     margin-left: 3rem;
+
+    @include responsive(tablet-portrait) {
+      width: 60%;
+      padding: 0 0 4rem 0;
+      margin-left: 0;
+      align-self: center;
+    }
 
     & > :not(:last-child) {
       margin-bottom: 3rem;
@@ -30,13 +44,18 @@
 .feature {
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
 
   position: relative;
 
   padding: 20rem 18rem;
   margin-top: -15vh; // moves the entire section up 👆
   background-color: var(--color-grey-light-1);
+
+  @include responsive(tablet-portrait) {
+    flex-direction: column;
+    align-items: center;
+  }
 
   // background image
   &::after {
@@ -123,4 +142,3 @@ form {
   padding: 6rem;
   width: 55%;
 }
-

@@ -3,6 +3,7 @@
 /* 
 Desktop-First approach 👇
 
+0- 375px            --> Mobile - small                    [max-width: 23.5em]
 0 - 600px           --> Mobile                            [max-width: 37.5em]
 600px - 900px       --> Tablet-Portrait                   [max-width: 56.25em]
 900px - 1200px      --> Tablet-Landscape                  [max-width: 75em]
@@ -10,10 +11,14 @@ Desktop-First approach 👇
 1800px ++           --> Big Desktop                       [min-width: 112.5em]
 
 👇 $breakpoint argument choices 👇
---> phone                       [600px]
+--> mobile-small                 [375px]
+--> mobile                       [600px]
 --> tablet-portrait             [900px]
 --> tablet-landscape            [1200px]
 --> big-desktop                 [1800px]
+
+
+1em = 16px (default root font-size)
 
 */
 
@@ -36,9 +41,21 @@ Desktop-First approach 👇
     }
   }
 
+  @if $breakpoint == mobile-small {
+    @media (max-width: 23.5em) {
+      @content;
+    }
+  }
+
   @if $breakpoint == big-desktop {
     @media (min-width: 112.5em) {
       @content;
     }
   }
 }
+
+/* Preference --> ORDER to write Media queries 
+
+base + typography  >  general layout  > page layout  > components
+
+*/

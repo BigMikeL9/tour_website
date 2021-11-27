@@ -10,6 +10,7 @@ html {
   font-size: 62.5%; // defines -->  1rem = 10px
   box-sizing: border-box;
   scroll-behavior: smooth;
+  // overflow-x: hidden;
 
   // 'max-width: 1200px'
   @include responsive(tablet-landscape) {
@@ -23,7 +24,12 @@ html {
 
   // 'max-width: 600px'
   @include responsive(mobile) {
-    font-size: 50%;
+    font-size: 45%;
+  }
+
+  // 'max-width: 375px'
+  @include responsive(mobile-small) {
+    font-size: 35%;
   }
 
   // 'min-width: 1800px'
@@ -38,4 +44,9 @@ body {
   font-weight: 400;
   color: var(--color-grey-dark);
   padding: 1.6rem;
+  // overflow-x: hidden;
+
+  @include responsive(tablet-portrait) {
+    padding: 0;
+  }
 }

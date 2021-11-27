@@ -14,6 +14,10 @@
     padding: 0 0 3rem 3.5rem;
 
     animation: moveInLeft 1.5s ease-in-out;
+
+    @include responsive(mobile) {
+      letter-spacing: 2rem;
+    }
   }
 
   &--sub {
@@ -24,6 +28,10 @@
     padding: 0 0 7rem 1.72rem;
 
     animation: moveInRight 1.5s ease-in-out;
+
+    @include responsive(mobile) {
+      letter-spacing: 1rem;
+    }
   }
 }
 
@@ -47,15 +55,31 @@
     text-shadow: 0.5rem 1rem 2rem var(--color-black-transparent);
     transform: skew(15deg, 2deg) scale(1.1);
   }
+
+  @include responsive(tablet-portrait) {
+    font-size: 3rem;
+  }
+
+  @include responsive(mobile) {
+    font-size: 2.5rem;
+  }
 }
 
 .heading__tertiary {
   font-size: 1.7rem;
   font-weight: 700;
   text-transform: uppercase;
+
+  @include responsive(tablet-portrait) {
+    font-size: 1.4rem;
+  }
 }
 
 .paragraph {
   font-size: var(--default-font-size);
   line-height: 2;
+
+  @include responsive(tablet-portrait) {
+    font-size: 1.3rem;
+  }
 }
