@@ -55,6 +55,15 @@
       width: 49%;
       display: inline-block;
       position: relative;
+
+      @include responsive(tablet-portrait) {
+        width: 45%;
+      }
+
+      @include responsive(mobile) {
+        margin-bottom: 2rem;
+        width: 100%;
+      }
     }
 
     &-input {

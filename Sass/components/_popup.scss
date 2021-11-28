@@ -34,20 +34,39 @@
     overflow: hidden; // for images overflowing the container border-radius
 
     transition: all 0.4s 0.2s;
+
+    @include responsive(tablet-portrait) {
+      flex-direction: column;
+    }
   }
 
   &__left {
     width: 35%;
 
+    @include responsive(tablet-portrait) {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+    }
+
     &-image {
       display: block;
       width: 100%;
+
+      @include responsive(tablet-portrait) {
+        width: 50%;
+      }
     }
   }
 
   &__right {
     flex: 1;
     padding: 3rem 5rem;
+
+    @include responsive(tablet-portrait) {
+      flex: auto;
+      text-align: center;
+    }
 
     & > *:not(:last-child) {
       margin-bottom: 3rem;

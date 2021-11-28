@@ -9,21 +9,10 @@
 
   &__container {
     display: flex;
-
-    @include responsive(tablet-portrait) {
-      flex-direction: column;
-      // justify-content: center;
-      // align-items: center;
-    }
   }
 
   &:not(:last-child) {
     margin-right: 4rem;
-
-    @include responsive(tablet-portrait) {
-      margin-right: 0;
-      margin-bottom: 4rem;
-    }
   }
 
   &:hover &__side-front {
@@ -204,6 +193,71 @@
         &--big {
           font-size: 6rem;
           font-weight: 100;
+        }
+      }
+    }
+  }
+
+  // MEDIA QUERY
+  @include responsive(tablet-portrait) {
+    height: 62rem;
+
+    &__container {
+      @include responsive(tablet-portrait) {
+        flex-direction: column;
+      }
+    }
+
+    &:not(:last-child) {
+      @include responsive(tablet-portrait) {
+        margin-right: 0;
+        margin-bottom: 4rem;
+      }
+    }
+
+    &:hover &__side-front {
+      @include responsive(tablet-portrait) {
+        transform: none;
+      }
+    }
+
+    &:hover &__side-back {
+      @include responsive(tablet-portrait) {
+        transform: none;
+      }
+    }
+
+    &__side {
+      ////////////////////////////////////////////////
+      // Card -- BACK SIDE
+      &-back {
+        @include responsive(tablet-portrait) {
+          transform: rotateY(0);
+          padding-top: 2.5rem;
+          height: 30%;
+          top: unset;
+          bottom: 0;
+          clip-path: polygon(0 15%, 100% 0, 100% 100%, 0% 100%);
+        }
+
+        &-title {
+          &-container {
+            @include responsive(tablet-portrait) {
+              margin-bottom: 2rem;
+            }
+          }
+
+          &--small {
+            @include responsive(tablet-portrait) {
+              font-size: 1rem;
+            }
+          }
+
+          &--big {
+            @include responsive(tablet-portrait) {
+              font-size: 2.5rem;
+            }
+          }
         }
       }
     }

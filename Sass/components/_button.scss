@@ -16,6 +16,10 @@
     // Styling for Button element
     border: none;
     cursor: pointer;
+
+    @include responsive(tablet-portrait) {
+      transform: scale(0.8);
+    }
   }
 
   &--white {

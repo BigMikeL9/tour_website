@@ -7,8 +7,20 @@
   align-items: center;
 
   background-color: var(--color-grey-light-1);
-  padding: 20rem 8rem 25rem;
+  padding: 20rem 0 25rem;
   margin-top: -20vh; // moves the about-section up 👆
+
+  @include responsive(tablet-portrait) {
+    padding: 20rem 0 48rem;
+  }
+
+  @include responsive(mobile) {
+    padding: 20rem 0 45rem;
+  }
+
+  @include responsive(mobile-small) {
+    padding: 28rem 0 45rem;
+  }
 
   &__content-container {
     display: flex;
@@ -16,9 +28,6 @@
     @include responsive(tablet-portrait) {
       flex-direction: column;
     }
-
-    // @include responsive(mobile) {
-    // }
   }
 
   &__content {
@@ -55,6 +64,8 @@
   @include responsive(tablet-portrait) {
     flex-direction: column;
     align-items: center;
+
+    padding: 15rem 18rem;
   }
 
   // background image
@@ -103,6 +114,10 @@
   padding: 10rem 0;
 
   position: relative; // for background-video
+
+  @include responsive(tablet-portrait) {
+    padding: 7rem 0;
+  }
 }
 
 /////////////////////////////////////////////////////
@@ -112,19 +127,25 @@
   justify-content: center;
   align-items: center;
 
-  height: 100vh; // delete later
+  padding: 15rem 0;
   background-image: linear-gradient(
     to bottom right,
     var(--color-primary),
     var(--color-primary-dark)
   );
 
+  @include responsive(tablet-portrait) {
+    padding: 10rem 0;
+  }
+
   &__form-container {
+    width: 70%;
+
     background-image: linear-gradient(
         105deg,
         var(--color-white-transparent) 0,
-        var(--color-white-transparent) 50%,
-        rgba(255, 0, 0, 0) 50%
+        var(--color-white-transparent) 55%,
+        rgba(255, 0, 0, 0) 55%
       ),
       url("../img/nat-10.jpg");
     background-size: cover;
@@ -133,12 +154,40 @@
     border-radius: 3px;
     box-shadow: 0 1.5rem 4rem var(--color-black-transparent);
 
-    // Delate later
-    width: 70%;
+    @include responsive(tablet-landscape) {
+      background-image: linear-gradient(
+          105deg,
+          var(--color-white-transparent) 0,
+          var(--color-white-transparent) 70%,
+          rgba(255, 0, 0, 0) 70%
+        ),
+        url("../img/nat-10.jpg");
+
+      width: 85%;
+    }
+
+    @include responsive(tablet-portrait) {
+      background-image: linear-gradient(
+          to right,
+          var(--color-white-transparent) 0,
+          var(--color-white-transparent) 100%
+        ),
+        url("../img/nat-10.jpg");
+
+      width: 65%;
+    }
   }
 }
 
-form {
+.form {
   padding: 6rem;
   width: 55%;
+
+  @include responsive(tablet-landscape) {
+    width: 75%;
+  }
+
+  @include responsive(tablet-portrait) {
+    width: 100%;
+  }
 }

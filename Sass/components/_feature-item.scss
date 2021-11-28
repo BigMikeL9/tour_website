@@ -16,6 +16,7 @@
 
     @include responsive(tablet-portrait) {
       width: 35rem;
+      min-height: 25rem;
     }
 
     @include responsive(mobile) {
@@ -49,6 +50,10 @@
 
     &--title {
       margin: 2rem 0;
+
+      @include responsive(tablet-portrait) {
+        margin: 1.5rem 0;
+      }
     }
 
     &--text {
